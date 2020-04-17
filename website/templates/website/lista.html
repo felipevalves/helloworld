@@ -14,6 +14,23 @@
             <p class="card-text">
               Aqui está a lista de <code>Funcionários</code> cadastrados.
             </p>
+          <form method="get" action="{% url 'website:lista_funcionario' %}">
+            <div class="row">
+              <div class="col-md-9">
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Filtro</span>
+                  </div>
+                  <!--<input type="text" value="{{filtro}}" name="filtro" class="form-control"/>-->
+                  <input type="text" value="{{form.nome}}" name="nome" class="form-control"/>
+                </div>
+              </div>
+              <div class="col-md-3">
+                  <button class="btn btn-primary">Filtrar</button>
+              </div>
+            </div>
+          </form>
 
             <table class="table">
               <thead class="thead-dark">

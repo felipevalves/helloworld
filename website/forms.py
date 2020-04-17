@@ -22,6 +22,15 @@ class InsereFuncionarioForm(forms.ModelForm):
         # campos que não estarão no form
         exclude = ['tempo_de_servico']
 
+class ConsultaFuncionarioForm(forms.Form):
+    class Meta:
+        model = Funcionario
+
+        # campos que estarão no form
+        fields = ['nome']
+        # campos que não estarão no form
+        # exclude = ['tempo_de_servico']
+
 # class InsereFuncionarioForm(forms.Form):
 #     nome = forms.CharField(
 #         required=True,

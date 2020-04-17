@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
-from website.views import IndexTemplateView, FuncionarioCreateView, FuncionarioListView, FuncionarioUpdateView, FuncionarioDeleteView
+from website.views import IndexTemplateView, FuncionarioCreateView, FuncionarioListView, FuncionarioFilterListView, FuncionarioUpdateView, FuncionarioDeleteView
 
 app_name = 'website'
 
 urlpatterns = [
 
     path('', IndexTemplateView.as_view(), name='index'),
-    path('funcionarios/', FuncionarioListView.as_view(), name='lista_funcionario'),
+    path('funcionarios/', views.funcionario_list, name='lista_funcionario'),
+    # path('funcionarios/', FuncionarioListView.as_view(), name='lista_funcionario'),
+    # path('funcionarios/<filter>', FuncionarioFilterListView.as_view(), name='lista_funcionario_filtro'),
     path('funcionario/cadastrar', FuncionarioCreateView.as_view(), name='cadastra_funcionario'),
     path('funcionario/<pk>', FuncionarioUpdateView.as_view(), name='atualiza_funcionario'),
     path('funcionario/excluir/<pk>', FuncionarioDeleteView.as_view(), name='deleta_funcionario'),

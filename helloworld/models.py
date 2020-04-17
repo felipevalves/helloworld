@@ -33,4 +33,7 @@ class Funcionario(models.Model):
         blank=False
     )
 
+    def __str__(self):
+        return self.nome
+
     objetos = models.Manager()
