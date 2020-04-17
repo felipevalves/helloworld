@@ -1,3 +1,3 @@
 # helloworld
-Crud com Django
+Crud com Django.
 Projeto simples de CRUD de funcionário.
